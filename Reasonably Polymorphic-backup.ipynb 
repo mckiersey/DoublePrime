@@ -15,10 +15,10 @@
   "orig_nbformat": 4,
   "kernelspec": {
    "name": "python3",
-   "display_name": "Python 3.5.1 64-bit ('miniconda3': conda)"
+   "display_name": "Python 3.5.1 64-bit"
   },
   "interpreter": {
-   "hash": "4a0ec900ba58eea66d54c46d7672ba688f3653bf7b51327659fbe0334df3fc02"
+   "hash": "11a4a60b518bf24989d481468076e5d5982884626aed9faeb35b8576fcd223e1"
   }
  },
  "nbformat": 4,
@@ -26,7 +26,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 66,
    "source": [
     "from datetime import date\n",
     "source = \"https://reasonablypolymorphic.com/book/preface\"\n",
@@ -37,7 +37,7 @@
      "output_type": "stream",
      "name": "stdout",
      "text": [
-      "This is a digital computer, made following these instructions https://reasonablypolymorphic.com/book/preface today is:  2021-09-23\n"
+      "This is a digital computer, made following these instructions https://reasonablypolymorphic.com/book/preface today is:  2021-08-23\n"
      ]
     }
    ],
@@ -45,7 +45,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 67,
    "source": [
     "def not_gate(input):\n",
     "    if input == 1:\n",
@@ -61,7 +61,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 68,
    "source": [
     "not_gate(\"sd\")"
    ],
@@ -74,7 +74,7 @@
       ]
      },
      "metadata": {},
-     "execution_count": 4
+     "execution_count": 68
     }
    ],
    "metadata": {}
@@ -92,7 +92,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 69,
    "source": [
     "## AND GATE\n",
     "    # Only on when both inputs are on\n",
@@ -116,7 +116,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 70,
    "source": [
     "and_gate(1,1)"
    ],
@@ -129,7 +129,7 @@
       ]
      },
      "metadata": {},
-     "execution_count": 6
+     "execution_count": 70
     }
    ],
    "metadata": {}
@@ -147,7 +147,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 71,
    "source": [
     "## OR GATE\n",
     "# This machine produces an output of 1 when either input A or input B is 1 (or both).\n",
@@ -167,7 +167,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 72,
    "source": [
     "or_gate(1,0)"
    ],
@@ -180,14 +180,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 8
+     "execution_count": 72
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 73,
    "source": [
     "## DE MORGAN'S LAW:\n",
     "   # De Morgan’s laws state that whenever we have an and gate, we can turn it into an or gate by wrapping it up in not gates. And vice versa.  "
@@ -208,7 +208,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 74,
    "source": [
     "# NAND Gate\n",
     "#THE MOST FUNDAMENTAL MACHINE\n",
@@ -224,7 +224,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 75,
    "source": [
     "nand_gate(0,0)"
    ],
@@ -237,14 +237,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 11
+     "execution_count": 75
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 76,
    "source": [
     "## Building an OR gate from an NAND gate\n",
     "# output = 1 unless both input are 0\n",
@@ -260,7 +260,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 77,
    "source": [
     "nand_and_gate(0,1)"
    ],
@@ -273,14 +273,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 13
+     "execution_count": 77
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 78,
    "source": [
     "def nand_not_gate(input):\n",
     "    output = nand_gate(input, input)\n",
@@ -291,7 +291,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 79,
    "source": [
     "nand_not_gate(0)"
    ],
@@ -304,14 +304,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 15
+     "execution_count": 79
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 80,
    "source": [
     "def nand_or_gate(input_a, input_b):\n",
     "    not_gate_a = nand_not_gate(input_a)\n",
@@ -325,7 +325,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 81,
    "source": [
     "nand_or_gate(1,0)\n"
    ],
@@ -338,14 +338,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 17
+     "execution_count": 81
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 82,
    "source": [
     "nand_or_gate(1,1)"
    ],
@@ -358,14 +358,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 18
+     "execution_count": 82
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 83,
    "source": [
     "nand_or_gate(0,1)"
    ],
@@ -378,14 +378,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 19
+     "execution_count": 83
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 84,
    "source": [
     "nand_or_gate(0,0)"
    ],
@@ -398,14 +398,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 20
+     "execution_count": 84
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 85,
    "source": [
     "#C-OUT\n",
     "#We need to carry a 1 when the column has overflown; we can store a maximum of 1[b] (=2), but as we are adding three wires, we can have a potential maximum of 11[b] (=3)\n",
@@ -426,7 +426,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 86,
    "source": [
     "function_table = (cout(0,0,0),\n",
     "                  cout(0,0,1),\n",
@@ -463,7 +463,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 87,
    "source": [
     "## XOR \n",
     "# 1 when A and B are different: \n",
@@ -487,7 +487,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 88,
    "source": [
     "xor_function_table = ( \n",
     "                      xor_gate(0,0),\n",
@@ -510,7 +510,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 89,
    "source": [
     "## SUM\n",
     "def sum(input_a, input_b, Cin):\n",
@@ -523,7 +523,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 90,
    "source": [
     "sum(1,0,0)"
    ],
@@ -536,14 +536,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 26
+     "execution_count": 90
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 91,
    "source": [
     "## Add (columns)\n",
     "# Input: Numbers in column + (optional) carry in number (from previous column)\n",
@@ -560,7 +560,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 92,
    "source": [
     "add_function_table = ( \n",
     "                      add(0,0,0),\n",
@@ -589,7 +589,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 93,
    "source": [
     "add(1,1,0)"
    ],
@@ -602,14 +602,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 29
+     "execution_count": 93
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 94,
    "source": [
     "## Add machine\n",
     "# Add two nybbles\n",
@@ -639,7 +639,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 95,
    "source": [
     "add4(1,1,1,1,1,1,1,1)"
    ],
@@ -652,7 +652,7 @@
       ]
      },
      "metadata": {},
-     "execution_count": 31
+     "execution_count": 95
     }
    ],
    "metadata": {}
@@ -666,7 +666,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 96,
    "source": [
     "# Split machine: divides a (single) wire into its value and the not of its value.\n",
     "def split(input_a):\n",
@@ -679,7 +679,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 33,
+   "execution_count": 97,
    "source": [
     "split(0)"
    ],
@@ -692,14 +692,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 33
+     "execution_count": 97
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 98,
    "source": [
     "def demux2(multiwire_a, D): # Note, D can be considered an ON/OFF switch, where it switches the current in the multiwire depnding on its value \n",
     "\n",
@@ -719,7 +719,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 99,
    "source": [
     "multiwire_a =(1,0,1,1,1,1,0)\n",
     "D = 1"
@@ -729,7 +729,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 36,
+   "execution_count": 100,
    "source": [
     "demux2(multiwire_a, D)"
    ],
@@ -742,14 +742,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 36
+     "execution_count": 100
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 37,
+   "execution_count": 101,
    "source": [
     "def mux2(multiwire_a, multiwire_b, W):\n",
     "    w_split = split(W)\n",
@@ -780,7 +780,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 38,
+   "execution_count": 102,
    "source": [
     "multiwire_a =(1,0,1,1,1,1,0)\n",
     "multiwire_b =(1,0,1,1,1,1,0)\n",
@@ -852,14 +852,14 @@
       ]
      },
      "metadata": {},
-     "execution_count": 38
+     "execution_count": 102
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 39,
+   "execution_count": 103,
    "source": [
     "#https://reasonablypolymorphic.com/book/latches\n",
     "\n",
@@ -883,7 +883,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 40,
+   "execution_count": 108,
    "source": [
     "last_output = None\n",
     "next_output = None\n",
@@ -932,22 +932,31 @@
       "next output:  0\n",
       "input_b is defined as: 0\n",
       "next output:  0\n",
+      "11\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "12\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "13\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "14\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "15\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "16\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "17\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "18\n",
       "input_b is defined as: 0\n",
       "next output:  1\n",
+      "19\n",
       "input_b is defined as: 0\n",
       "next output:  1\n"
      ]
@@ -957,7 +966,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 41,
+   "execution_count": 117,
    "source": [
     "#Clock\n",
     "def clock(*input_a):\n",
@@ -973,7 +982,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 42,
+   "execution_count": 123,
    "source": [
     "last_output = None\n",
     "next_output = None\n",
@@ -1022,7 +1031,7 @@
       ]
      },
      "metadata": {},
-     "execution_count": 42
+     "execution_count": 123
     }
    ],
    "metadata": {}
@@ -1039,7 +1048,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 43,
+   "execution_count": null,
    "source": [
     "# RS Latch\n",
     "\n",
@@ -1050,7 +1059,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 44,
+   "execution_count": 134,
    "source": [
     "int(10,2)"
    ],
@@ -1058,12 +1067,12 @@
     {
      "output_type": "error",
      "ename": "TypeError",
-     "evalue": "int() can't convert non-string with explicit base",
+     "evalue": "'str' object is not callable",
      "traceback": [
       "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
       "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-44-61fb55288967>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m10\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[0;31mTypeError\u001b[0m: int() can't convert non-string with explicit base"
+      "\u001b[0;32m<ipython-input-134-8ab5b452286b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m10\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mbase\u001b[0m\u001b[0;34m=\u001b[0m \u001b[0;36m10\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m: 'str' object is not callable"
      ]
     }
    ],
@@ -1071,7 +1080,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 127,
    "source": [
     "bin(28)"
    ],
@@ -1091,7 +1100,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 128,
    "source": [
     "2**4+2*3+2**2"
    ],

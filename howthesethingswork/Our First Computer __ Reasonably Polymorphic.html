@@ -1,0 +1,1165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0062)https://reasonablypolymorphic.com/book/our-first-computer.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Our First Computer :: Reasonably Polymorphic</title>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <link href="https://reasonablypolymorphic.com/atom.xml" rel="alternate" title="Reasonably Polymorphic - Atom" type="application/atom+xml">
+        <link href="https://reasonablypolymorphic.com/feed.rss" rel="alternate" title="Reasonably Polymorphic - RSS" type="application/rss+xml">
+
+        <link href="./Our First Computer __ Reasonably Polymorphic_files/css" rel="stylesheet" type="text/css">
+        <link href="./Our First Computer __ Reasonably Polymorphic_files/style.css" type="text/css" rel="stylesheet">
+        <link href="./Our First Computer __ Reasonably Polymorphic_files/syntax.css" type="text/css" rel="stylesheet">
+
+        <script async="" src="./Our First Computer __ Reasonably Polymorphic_files/analytics.js"></script><script type="text/javascript" src="./Our First Computer __ Reasonably Polymorphic_files/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="./Our First Computer __ Reasonably Polymorphic_files/baseline.js"></script>
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                    "HTML-CSS": {
+                        scale: 50
+                    },
+  TeX: {extensions: [ "AMSmath.js"
+                    , "AMSsymbols.js"
+                    , "color.js"
+                    , "http://sonoisa.github.io/xyjax_ext/xypic.js"
+                    ]}
+            });
+        </script>
+        <script src="./Our First Computer __ Reasonably Polymorphic_files/MathJax.js" id=""></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76834556-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+        <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+        <body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+<div class="column">
+    <article>
+<header>
+    <h1><a href="https://reasonablypolymorphic.com/book/our-first-computer">Our First Computer</a></h1>
+</header>
+<p class="meta">
+    
+    <span class="prev">
+        <a href="https://reasonablypolymorphic.com/book/kleisli-tools">←</a>
+    </span>
+    
+    
+    <span class="next">
+        <a href="https://reasonablypolymorphic.com/book/tapes">→</a>
+    </span>
+    
+    <time>November 24, 2016</time>
+    
+        <span class="tags">
+        
+        </span>
+    
+</p>
+<div class="content">
+    <p>We spent the last chapter looking at means of making dealing with Kleisli categories somewhat mangeable. In the end, we came up with the idea of <code>do</code>-notation, a syntactic convention which “desugared” down to combinations of <code>bind : Kliesli m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b</code> and <code>ignoring : Kliesli m =&gt; m a -&gt; m b -&gt; m b</code> depending on whether or not we cared about the result of each particular Kleisli value.</p>
+<p>More generally, we spent part 2 of the book discussing <em>symbolic computation</em>: what it is, and how we can use it. We’ve shown by now that symbolic computation is at least as powerful as our old machine diagrams, and it is significantly more compact. Compactness is a good thing, because we as humans have a limited brain capacity, and so the more compact any particular concept is, the more of them we can hold in our heads simultaneously. The claim here is that we can build bigger, more complicated things out of symbolic computation than we ever could out of machine diagrams. This is not for any technical reason, but for a psychological one – it’s just too easy to “get our wires crossed” in a machine diagram, both figuratively and literally.</p>
+<h2 id="the-p-machine">The P’’ Machine</h2>
+<p>Today we’re going to look at the remainder of the architecture we’ll need to support in order to build a general-purpose computer. We’re going to investigate a very primitive computer, called <em>P’’</em> (pronounced “P double prime”). Although <em>P’’</em> is terribly basic, it turns out to be powerful enough to compute “anything computable”. That’s not to say that you’d <em>actually want</em> to compute anything on a <em>P’’</em> computer, but in theory, you absolutely could. We’ll revisit this idea of “computability” and show why <em>P’’</em> is capable of doing it at some later point in time.</p>
+<p>A <em>P’’</em> machine is generally described in terms of <strong>tapes</strong>. A <em>tape</em> is exactly like what’s inside of an old VHS or cassette – it’s a roll of data with spools on either side. However, at any particular point in time, there is only one thing you can read from the tape, and that’s the piece that isn’t currently on a spool. Unlike a VHS or cassette, these spools are infinitely large – you can unwind in either direction forever. Movie projector film is a good mental model for a <em>tape</em> – at any given moment there is exactly one frame on the spool to be projected on the screen. We call the “frame” of the tape currently under inspection the <strong>read head</strong> of the tape.</p>
+<p>With that in mind, any particular <em>P’’</em> machine needs the following things to function:</p>
+<ul>
+<li>A “program” tape, consisting of step-by-step instructions for how to proceed.</li>
+<li>A “memory” tape, acting as a form of “scratch work paper”, where the program can dump the results of things its computed.</li>
+</ul>
+<p>Implicit in this definition is that each of these tapes has a <em>read head</em>, which is to say that we can only be looking at one element on the program tape, and one element on the memory tape at a time.</p>
+<p>The only two questions left to ask ourselves are, “what <em>type</em> of things can we store on the memory tape,” and “what are these instructions” that are allowed on the program tape?</p>
+<p>In <em>P’‘<em>, our memory tape consists of an infinite count of <code>Nat</code>ural numbers – each of which has an original value of <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mn" id="MathJax-Span-3" style="font-family: STIXGeneral-Regular;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-1">0</script></span>. That leaves only the question of what instructions do we have at our disposal for writing programs. In </em>P’’</em>, we are given the following, extremely restrictive set of instructions. Five of them are very simple:</p>
+<ul>
+<li><em>Halt</em>: Stops the machine from running any further.</li>
+<li><em>Increment</em>: “Erase” the <code>Nat</code> currently at the read head of the memory tape, and replace it with the <code>succ</code> of that number.</li>
+<li><em>Decrement</em>: Like <em>Increment</em>, but replaces the number at the read head of the memory tape with the <code>prev</code> of that number. If there is no <code>prev</code>, the program <em>Halts</em>.</li>
+<li><em>Move Right</em>: Advances the memory tape by one step to the right (so that the read head is now pointing to a different “frame” than it was previously.)</li>
+<li><em>Move Left</em>: Advances the memory tape by one step to the left.</li>
+</ul>
+<p>There are two more instructions available to <em>P’’</em> which might be a little harder to wrap your head around, at least until you’ve begun using them in practice.</p>
+<ul>
+<li><em>Enter Loop</em>: If the <code>Nat</code> at the read head of the <em>memory tape</em> is <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mn" id="MathJax-Span-6" style="font-family: STIXGeneral-Regular;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-2">0</script></span>, then advance the read head of the <em>program tape</em> until the “matching” <em>Exit Loop</em> instruction.</li>
+<li><em>Exit Loop</em>: If the <code>Nat</code> at the read head of the memory tape is <strong>not</strong> 0, then rewind the read head of the program tape to the “matching” <em>Enter Loop</em> instruction.</li>
+</ul>
+<p>And, you might be surprised to learn, that’s all there is to a computer “powerful enough to compute anything computable.” That means this dinky little thing we just described is literally just as capable of computations as your smartphone is. It might not be as <em>fast</em>, necessarily, but with enough time, it’ll get there. That means that <em>P’’</em> can run “Flappy Bird”, the “Facebook” app, and run “Spotify”, to name a few things. It sounds crazy, right? But at the end of the day, it’s really not any crazier than the fact that all electronics can be built out of wires and <code>nand</code> gates.</p>
+<p>There’s one last thing to describe for our <em>P’’</em> machine, and that is just the fact that after running the actions associated with each instruction above, the read head of the program tape moves forward one step. Afterward the program tape moves forwards, it reads the next instruction and executes it. Rinse and repeat.</p>
+<p>Let’s give some more concise symbolic names to our instructions, and look at a few examples.</p>
+<ul>
+<li><em>Halt</em>: <code>¤</code></li>
+<li><em>Increment</em>: <code>+</code></li>
+<li><em>Decrement</em>: <code>-</code></li>
+<li><em>Move Right</em>: <code>→</code></li>
+<li><em>Move Left</em>: <code>←</code></li>
+<li><em>Enter Loop</em>: <code>[</code></li>
+<li><em>Exit Loop</em>: <code>]</code></li>
+</ul>
+<p>We can write a short program which moves the <code>Nat</code> from the first frame of the memory tape into the second:</p>
+<div class="noborders">
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+</tbody>
+</table>
+<p>How does this work? Well, let’s run it, one step at a time. The <code>↓</code> denotes the current read head of the program tape (first row), and of the memory tape (second row).</p>
+<p>We start by placing the read heads at the beginning of each tape. We’ve put the number <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-7" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-8"><span class="mn" id="MathJax-Span-9" style="font-family: STIXGeneral-Regular;">2</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-3">2</script></span> in the first cell of the memory tape just in order to show how this function works, but recall, usually our memory tape starts out as all <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-10" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-11"><span class="mn" id="MathJax-Span-12" style="font-family: STIXGeneral-Regular;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-4">0</script></span>s.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>2</code></td>
+<td align="center"><code>0</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Our <em>P’’</em> machine looks at the instruction at the read head of the program tape, and sees that it is the <em>Enter Loop</em> instruction. Because the value at the read head of the memory tape is <em>not</em> <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-14"><span class="mn" id="MathJax-Span-15" style="font-family: STIXGeneral-Regular;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-5">0</script></span>, it does not perform any action.</p>
+<p>However, after each instruction is completed, the read head of the program tape moves forward by one.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>2</code></td>
+<td align="center"><code>0</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>The instruction under the program read head is now <em>Move Right</em>, so the read head of the memory tape moves right:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>2</code></td>
+<td align="center"><code>0</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>And now that the instruction is finished, the program head moves forward as well.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>2</code></td>
+<td align="center"><code>0</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>The read head is now the instruction <em>Increment</em>, so we <code>succ</code> the <code>Nat</code> under the memory read head, and then we move the program read head by one since our instruction is finished. Our tapes now look like this:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>2</code></td>
+<td align="center"><code>1</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>We will elide commentary for the next couple iterations of our <em>P’’</em> machine.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>2</code></td>
+<td align="center"><code>1</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>1</code></td>
+<td align="center"><code>1</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Our program read head is now the <em>Exit Loop</em> instruction, so we check to see if the memory head is <em>not</em> <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-16" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-17"><span class="mn" id="MathJax-Span-18" style="font-family: STIXGeneral-Regular;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-6">0</script></span>. Because it is <em>not</em>, the <em>Exit Loop</em> instruction moves the program head backwards until it finds a <em>Enter Loop</em> instruction which “matches” the <em>Exit Loop</em>. For example, this machine:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>[</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+</tr>
+</tbody>
+</table>
+<p>would rewind all the way to the <code>[</code> which “matches” the <code>]</code>:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>[</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that in rewinding, we “skipped” a <code>[</code>. We are not looking for the <em>first</em> <code>[</code> – just the one that balances out the current <code>]</code>. If our program is misformed and there <em>is no</em> matching <em>Loop</em> instruction, we <em>Halt</em>, since it is meaningless to go on.</p>
+<p>Anyway, back to our worked example:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>1</code></td>
+<td align="center"><code>1</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>and then our read head moves forward again, and the entire procedure happens again:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>1</code></td>
+<td align="center"><code>1</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>We present the remainder of the computation here, for completeness:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>1</code></td>
+<td align="center"><code>1</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>1</code></td>
+<td align="center"><code>2</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>1</code></td>
+<td align="center"><code>2</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>0</code></td>
+<td align="center"><code>2</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Here, the read head of the memory tape <em>is</em> <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-19" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-20"><span class="mn" id="MathJax-Span-21" style="font-family: STIXGeneral-Regular;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-7">0</script></span>, so we do <em>not</em> jump back to the matching <code>[</code>. Instead, no instruction occurs, so we just move through:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>0</code></td>
+<td align="center"><code>2</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>[</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>←</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>]</code></td>
+<td align="center"><code>→</code></td>
+<td align="center"><code>¤</code></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>↓</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>0</code></td>
+<td align="center"><code>2</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Our program is finished, because we’ve now hit a <em>Halt</em> instruction. And voila, just like magic, we have successfully moved the value from the first memory frame into the second memory frame. It should be obvious to you, if you followed the execution of this machine, that the number <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-22" style="width: 0.269em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.531em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1000.44em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-23"><span class="mn" id="MathJax-Span-24" style="font-family: STIXGeneral-Regular;">2</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-8">2</script></span> wasn’t important whatsoever. We could have just as easily written a program to move <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;123812&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-25" style="width: 1.58em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.022em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1002.93em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-26"><span class="mn" id="MathJax-Span-27" style="font-family: STIXGeneral-Regular;">123812</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.481em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>123812</mn></math></span></span><script type="math/tex" id="MathJax-Element-9">123812</script></span> to the second frame, although it might have taken <em>slightly</em> longer to actually run the thing.</p>
+<p>Following all of that reasoning was a bit tedious, though, wasn’t it? Our goal moving forwards in this series will be to implement a <em>P’’ emulator</em> – a computer capable of pretending to be a <em>P’’</em> machine. We have to <em>pretend</em> to do this, since we don’t physically want tapes spooling and unspooling on us. Also, that sounds like it’d be mechanically difficult to implement, and we don’t have any patience for things that might be difficult. That’s why we’re inventing all of these abstractions, so we can get away from dealing with anything tedious or difficult.</p>
+<p>With all of that in mind, in the next two chapters we will build this <em>P’’</em> machine in its entirety. It sounds like a tall order, but in fact we already have all of the tooling necessary to accomplish such a feat.</p>
+<hr>
+<h2 id="exercises">Exercises</h2>
+<ol style="list-style-type: decimal">
+<li>Our program to “move the value from the first memory frame into the second” doesn’t actually work as specified. In fact, it actually “adds the value from the first frame into the second frame”. There is a slight distinction between these specifications if there is already a number in the second frame. Change the program presented above so that it first clears the number in the second frame before moving the contents of the first frame into it.</li>
+<li>Run through the execution of your new program with the memory cell <code>1,2</code>.</li>
+</ol>
+</div>
+<p class="meta">
+    
+    <span class="prev">
+        <a href="https://reasonablypolymorphic.com/book/kleisli-tools">←</a>
+    </span>
+    
+    
+    <span class="next">
+        <a href="https://reasonablypolymorphic.com/book/tapes">→</a>
+    </span>
+    
+</p>
+</article>
+
+    <nav>
+    <h1><a href="https://reasonablypolymorphic.com/">REASONABLY<br>POLYMORPHIC</a></h1>
+
+    <p> Hi there. I'm <strong>Sandy Maguire</strong>. I like improving life and
+    making cool things.</p>
+
+    <p>If you want to get in touch, I'd love to hear from you! Send me an email;
+    my name is <tt>sandy</tt> and this is my website.</p>
+
+    <h2>THINGS I MAKE</h2>
+    <ul>
+        <li>Code on <a href="http://github.com/isovector">github</a></li>
+        <li>Essays <a href="https://reasonablypolymorphic.com/blog/archives/">archive</a></li>
+        <li>Book <a href="https://reasonablypolymorphic.com/book/preface">archive</a></li>
+    </ul>
+
+    <h2>WHAT I'M DOING</h2>
+    <ul>
+        <li>Music at <a href="http://last.fm/user/Paamayim">last.fm</a></li>
+        <li>Books at <a href="https://www.goodreads.com/review/list/14945161-sandy-maguire?shelf=currently-reading">goodreads</a></li>
+        <li>Papers at <a href="https://www.mendeley.com/groups/7295141/read/papers/">mendeley</a></li>
+    </ul>
+
+    <p>
+    © 2011-2016 Sandy Maguire
+    </p>
+</nav>
+
+</div>
+    
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXSizeOneSym, sans-serif;"></div></div></body></html>

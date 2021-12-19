@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0051)https://reasonablypolymorphic.com/book/preface.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Preface :: Reasonably Polymorphic</title>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <link href="https://reasonablypolymorphic.com/atom.xml" rel="alternate" title="Reasonably Polymorphic - Atom" type="application/atom+xml">
+        <link href="https://reasonablypolymorphic.com/feed.rss" rel="alternate" title="Reasonably Polymorphic - RSS" type="application/rss+xml">
+
+        <link href="./Preface __ Reasonably Polymorphic_files/css" rel="stylesheet" type="text/css">
+        <link href="./Preface __ Reasonably Polymorphic_files/style.css" type="text/css" rel="stylesheet">
+        <link href="./Preface __ Reasonably Polymorphic_files/syntax.css" type="text/css" rel="stylesheet">
+
+        <script async="" src="./Preface __ Reasonably Polymorphic_files/analytics.js"></script><script type="text/javascript" src="./Preface __ Reasonably Polymorphic_files/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="./Preface __ Reasonably Polymorphic_files/baseline.js"></script>
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                    "HTML-CSS": {
+                        scale: 50
+                    },
+  TeX: {extensions: [ "AMSmath.js"
+                    , "AMSsymbols.js"
+                    , "color.js"
+                    , "http://sonoisa.github.io/xyjax_ext/xypic.js"
+                    ]}
+            });
+        </script>
+        <script src="./Preface __ Reasonably Polymorphic_files/MathJax.js" id=""></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76834556-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+        <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+        <body><div id="MathJax_Message" style="display: none;"></div>
+
+<div class="column">
+    <article>
+<header>
+    <h1><a href="https://reasonablypolymorphic.com/book/preface">Preface</a></h1>
+</header>
+<p class="meta">
+
+
+    <span class="next">
+        <a href="https://reasonablypolymorphic.com/book/machine-diagrams">→</a>
+    </span>
+
+    <time>October 31, 2016</time>
+
+        <span class="tags">
+
+        </span>
+
+</p>
+<div class="content">
+    <h1 id="how-these-things-work-the-preface">How These Things Work: The Preface</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<h3 id="part-1-diagrams">Part 1 – Diagrams</h3>
+<ul>
+<li><a href="https://reasonablypolymorphic.com/book/preface.html">Preface</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/machine-diagrams.html">Machine Diagrams</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/universal-machines.html">Universal Machines</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/interlude.html">Interlude</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/numbers.html">Numbers</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/arithmetic.html">Arithmetic</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/abstraction.html">Abstraction</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/multiplexing.html">Multiplexing</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/latches.html">Latches</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/constructions-on-annotations.html">Constructions on Annotations</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/memory.html">Memory Cells</a></li>
+</ul>
+<h3 id="part-2-symbolic-computations">Part 2 – Symbolic Computations</h3>
+<ul>
+<li><a href="https://reasonablypolymorphic.com/book/new-foundations.html">A New Foundation</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/symbolic-computation.html">Symbolic Computation</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/evaluation.html">Symbolic Evaluation and Equational Reasoning</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/more-types.html">More Types</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/polymorphism.html">Polymorphism</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/back-in-business.html">Back in Business and Better than Ever</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/infectiousness-of-reality.html">The Infectiousness of Reality</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/functions.html">Functions</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/kleisli-categories.html">Kleisli Categories</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/revisiting-state.html">Revisiting State</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/kleisli-tools.html">Kleisli Tools</a></li>
+</ul>
+<h3 id="part-3">Part 3</h3>
+<ul>
+<li><a href="https://reasonablypolymorphic.com/book/our-first-computer.html">Our First Computer</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/tapes.html">Tapes</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/operations.html">Operations</a></li>
+<li><a href="https://reasonablypolymorphic.com/book/tying-it-all-together.html">Tying It All Together</a></li>
+</ul>
+<h2 id="preface">Preface</h2>
+<p>The last decade of my life has been marked by acquiring knowledge around computers – how they work, and, more interestingly, why they work. Ostensibly this pursuit is known as <em>computer science</em>, but my most profound realization over the previous ten years is that computer science has as much to do with computers as it does with snowmen. That is to say, not much.</p>
+<p>A few years ago, I asked my engineer friend about how much of civilization he could rebuild singlehandedly, should he survive some hypothetical apocalyptic event. “All of it,” he replied. “Not all at once, but I know enough to be able to puzzle together the pieces I don’t know right this second.”</p>
+<p>That sentiment strongly resounded with me, and I’ve been thinking about it ever since. I share my friend’s optimism, that given enough large pieces of the puzzle, it’s possible to work backwards and figure out what shapes must have filled the gaps. It’s likely not an overnight endeavor, but it’s doable.</p>
+<p>And so that’s what this book strives to be: my contribution to any hypothetical survivors of the hypothetical apocalypse. A gentle, yet comprehensive introduction to <em>how these things work</em>. It won’t answer every question you might have, but the motivated reader will learn enough to be able to answer the remaining questions themselves.</p>
+<p>“But what of the rest of us,” you might be wondering. “Does this book hold any value for those of us without the delusions of grandeur to think we can rebuild civilization?” Perhaps I am biased, but I think it does, yes.</p>
+<p>While computer science has very little to do with snowmen, it has everything to do with <em>patterns</em>. The study of computer science, like mathematics, is one of overwhelming self-referentiality. The patterns that seemed so difficult and novel yesterday are today’s run-of-the-mill building blocks. Like a snowball rolling down a mountain, the student of computer science cannot help but gain momentum as these concepts begin converge in one huge avalanche.</p>
+<p>This process of using tools you built yesterday to help build bigger tools today is called <em>abstraction</em>, and it is the most powerful force I know of in the universe. Abstraction is the process of standing on the shoulders of giants, and using them to reach new heights. In my opinion, abstraction is the only reason humanity has managed to crawl its way out of the savannas and into something exceptionally worthwhile.</p>
+<p>Computer science is how I learned to do abstraction, and it is my most enrichingly- and economically- valuable skill. This is the final reason I offer to you why these things might be worth learning: it is strongly likely that you will make more money with them than without. As we will later see, abstraction is <em>literally impossible to automate</em> in the general case. This makes it a compelling skill to have in a world rapidly driving towards automating away most jobs. The debate whether or not that’s a good thing is left to minds smarter than my own, but you have to admit that it’s nice to have options.</p>
+<p>The attentive reader will notice a theme throughout this book. Like a fractal, we will same patterns reoccurring in deeper and deeper shades of abstraction, and as we learn more, our tools will begin to work on many different levels simultaneously. There are two marvelous experiences here – the amazement that such things can keep happening – and, in the later chapters, the eventual understanding behind <em>why</em>.</p>
+<p><img src="./Preface __ Reasonably Polymorphic_files/fractal.png" title="A fractal."></p>
+<p>Finally, I’d like to dedicate this book to my mum, whose thirst for knowledge has always inspired me, and to my father, who gave me this mindset in the first place.</p>
+</div>
+<p class="meta">
+
+
+    <span class="next">
+        <a href="https://reasonablypolymorphic.com/book/machine-diagrams">→</a>
+    </span>
+
+</p>
+</article>
+
+    <nav>
+    <h1><a href="https://reasonablypolymorphic.com/">REASONABLY<br>POLYMORPHIC</a></h1>
+
+    <p> Hi there. I'm <strong>Sandy Maguire</strong>. I like improving life and
+    making cool things.</p>
+
+    <p>If you want to get in touch, I'd love to hear from you! Send me an email;
+    my name is <tt>sandy</tt> and this is my website.</p>
+
+    <h2>THINGS I MAKE</h2>
+    <ul>
+        <li>Code on <a href="http://github.com/isovector">github</a></li>
+        <li>Essays <a href="https://reasonablypolymorphic.com/blog/archives/">archive</a></li>
+        <li>Book <a href="https://reasonablypolymorphic.com/book/preface">archive</a></li>
+    </ul>
+
+    <h2>WHAT I'M DOING</h2>
+    <ul>
+        <li>Music at <a href="http://last.fm/user/Paamayim">last.fm</a></li>
+        <li>Books at <a href="https://www.goodreads.com/review/list/14945161-sandy-maguire?shelf=currently-reading">goodreads</a></li>
+        <li>Papers at <a href="https://www.mendeley.com/groups/7295141/read/papers/">mendeley</a></li>
+    </ul>
+
+    <p>
+    © 2011-2016 Sandy Maguire
+    </p>
+</nav>
+
+</div>
+    
+
+
+</body></html>

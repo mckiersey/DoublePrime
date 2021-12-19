@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)https://reasonablypolymorphic.com/book/interlude.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Interlude :: Reasonably Polymorphic</title>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <link href="https://reasonablypolymorphic.com/atom.xml" rel="alternate" title="Reasonably Polymorphic - Atom" type="application/atom+xml">
+        <link href="https://reasonablypolymorphic.com/feed.rss" rel="alternate" title="Reasonably Polymorphic - RSS" type="application/rss+xml">
+
+        <link href="./Interlude __ Reasonably Polymorphic_files/css" rel="stylesheet" type="text/css">
+        <link href="./Interlude __ Reasonably Polymorphic_files/style.css" type="text/css" rel="stylesheet">
+        <link href="./Interlude __ Reasonably Polymorphic_files/syntax.css" type="text/css" rel="stylesheet">
+
+        <script async="" src="./Interlude __ Reasonably Polymorphic_files/analytics.js"></script><script type="text/javascript" src="./Interlude __ Reasonably Polymorphic_files/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="./Interlude __ Reasonably Polymorphic_files/baseline.js"></script>
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                    "HTML-CSS": {
+                        scale: 50
+                    },
+  TeX: {extensions: [ "AMSmath.js"
+                    , "AMSsymbols.js"
+                    , "color.js"
+                    , "http://sonoisa.github.io/xyjax_ext/xypic.js"
+                    ]}
+            });
+        </script>
+        <script src="./Interlude __ Reasonably Polymorphic_files/MathJax.js" id=""></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76834556-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+        <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+        <body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+<div class="column">
+    <article>
+<header>
+    <h1><a href="https://reasonablypolymorphic.com/book/interlude">Interlude</a></h1>
+</header>
+<p class="meta">
+    
+    <span class="prev">
+        <a href="https://reasonablypolymorphic.com/book/universal-machines">←</a>
+    </span>
+    
+    
+    <span class="next">
+        <a href="https://reasonablypolymorphic.com/book/numbers">→</a>
+    </span>
+    
+    <time>November  3, 2016</time>
+    
+        <span class="tags">
+        <a href="https://reasonablypolymorphic.com/book/tags/foo.html">foo</a>, <a href="https://reasonablypolymorphic.com/book/tags/bar.html">bar</a>
+        </span>
+    
+</p>
+<div class="content">
+    <h2 id="an-economic-argument">An Economic Argument</h2>
+<p>Let’s put aside the computer <em>science</em> for a little bit, and discuss some of the subtler, philosophical points at play in what we’ve seen so far.</p>
+<p>In the last chapter, we looked at three new machines: the <code>and</code> gate, which outputs 1 whenever <em>both</em> of its inputs are 1; the <code>or</code> gate, which outputs 1 whenever <em>either</em> of its inputs are 1; and the <code>nand</code> gate, which outputs 1 whenever its inputs are <em>not</em> both 1.</p>
+<p>We spent a significant amount of time wondering about which gates were “fundamental”, ie, which gates we could use to build the others. As we saw, any of the following combinations lead to a “fundamental” set of machines:</p>
+<ul>
+<li><code>and</code> and <code>not</code></li>
+<li><code>or</code> and <code>not</code></li>
+<li><code>nand</code></li>
+<li><code>nor</code> (if you did the bonus exercise, which I’d highly recommend!)</li>
+</ul>
+<p>We reasoned, that because <code>nand</code> is only one machine, and the <code>and</code>/<code>not</code> combo is two, <code>nand</code> must somehow be “more fundamental”. We called it “universal” since we realized that all other machines could be built from it.</p>
+<p>But the question remains: <em>who cares which machines are more fundamental?</em> And it’s a very good question. A very good question with a single-word answer, which I’ve pulled straight out of the Oxford English Dictionary:</p>
+<blockquote>
+<p>par·si·mo·ny (n) <br> <em>ˈpär-sə-ˌmō-nē</em> <br>&nbsp;<br> Extreme unwillingness to spend money or use resources.</p>
+</blockquote>
+<p>There are a few angles by which the most parsimonious approach is the best one. The first reason is the too-real truth that humans are capable of mistakes. Those mistakes might come in any number of forms: saying the wrong thing to your spouse, having an awkward encounter with a coworker, accidentally stapling your finger to “just see what would happen,” and so on. But the most egregious mistake of all is to base an argument on shaky grounds.</p>
+<p>And make no mistake, this theory of computer science we’ve been building here is nothing more than an argument. It’s an argument to the universe, that <em>things must be this way</em> because there is <em>no other possible way for them to be</em>. And it’s a particularly convincing argument, because all of this stuff actually works.</p>
+<p>But all arguments must rest on some assumptions, and in human affairs, it’s often in these assumptions where things go wrong. Rhetoric can be perfectly well argued, but rest on a poor foundation, and because of that, despite its <em>internal structure</em>, it is <em>ultimately wrong</em>.</p>
+<p>Parsimony is thus our hedge <em>against ourselves</em>. We realize that we humans are fallible, and, as a defense, we attempt to rest our arguments on as few <em>external factors as we can</em>. The fewer assumptions we make, the more likely our well-reasoned argument is to be right.</p>
+<p>The other motivation for parsimony is one pragmatics. One of, well, parsimony, if you will. Economic parsimony. I realize I haven’t been fooling anyone here by calling these things “diagrams”; everyone is acutely aware that we’ve been discussing <em>electronics</em> over the last few chapters.</p>
+<p>The thing about electronics is that they need to be manufactured before we can use them. And if they’re going to be manufactured, that means someone needs to manufacture each and every piece we need. Parsimony is then a limit on how much money we need to pay people to manufacture different parts for us. We can either pay <em>two</em> factories to build us <code>and</code> and <code>or</code> gates, or just <em>one</em> to build us <code>nand</code> gates, and assemble the rest ourselves.</p>
+<blockquote>
+<p>Takeaway: In theoretical endeavors, always aim for parsimony. It will save you money and, more importantly, time spent being wrong.</p>
+</blockquote>
+<h2 id="but-why">…But Why?</h2>
+<p>I touched on a point earlier: these diagrams and machines we’ve been designing on paper are nothing more than electric circuits. Sure, there’s a few “gotchas” to pay attention to when building these things for real, but our imaginary machines turn out to work just as well as real the silicon-and-copper things.</p>
+<p>A substitute teacher of mine, Mr.&nbsp;Bruce, once, back in grade-school was teaching my class about addition. He asked an idle question that I’ve never forgotten in all of these years, and likely the question that set me to learn all of these things in the first place.</p>
+<blockquote>
+<p>“Sure, 6 plus 9 is the same thing as 9 plus 6. <em>…but why?</em>”</p>
+</blockquote>
+<p>Mr.&nbsp;Bruce thankfully didn’t have an answer to this question, because if he had, I probably wouldn’t have pondered it for years forth. It’s kind of a silly question. Obviously <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 2.891em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.645em; height: 0px; font-size: 52%;"><span style="position: absolute; clip: rect(1.449em, 1005.56em, 2.891em, -1000.04em); top: -2.485em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mn" id="MathJax-Span-3" style="font-family: STIXGeneral-Regular;">6</span><span class="mo" id="MathJax-Span-4" style="font-family: STIXGeneral-Regular; padding-left: 0.269em;">+</span><span class="mn" id="MathJax-Span-5" style="font-family: STIXGeneral-Regular; padding-left: 0.269em;">9</span><span class="mo" id="MathJax-Span-6" style="font-family: STIXGeneral-Regular; padding-left: 0.269em;">=</span><span class="mn" id="MathJax-Span-7" style="font-family: STIXGeneral-Regular; padding-left: 0.269em;">9</span><span class="mo" id="MathJax-Span-8" style="font-family: STIXGeneral-Regular; padding-left: 0.269em;">+</span><span class="mn" id="MathJax-Span-9" style="font-family: STIXGeneral-Regular; padding-left: 0.269em;">6</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.065em; border-left: 0px solid; width: 0px; height: 0.549em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>6</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>9</mn><mo>+</mo><mn>6</mn></math></span></span><script type="math/tex" id="MathJax-Element-1">6+9 = 9+6</script></span>. Everyone knows that. But again, we ask, why?</p>
+<p>The answer itself is deep and profound, but we are not ready to learn it yet (rest assured, we’ll eventually get there.) But indeed, it’s the question that’s the important part. Or, more specifically, the <em>form</em> of the question. The form of the question, to me, is this:</p>
+<blockquote>
+<p>“What law of the universe forces this obvious thing to be so?”</p>
+</blockquote>
+<p>It is in questions of this form that lead to true understanding of the universe. If we know <em>why</em> it must be so, then we know it must be so. But in doing so, we’ve added a tool to our toolbox. The entirety of the marvels of human engineering are due to tools of this sort, and the interactions between them.</p>
+<p>If you know enough small details about the underlying mechanics of reality, you can jerry-rig them together in a way that the universe never anticipated, and you can do things that humanity previously thought impossible.</p>
+<p>This is all that invention is; it’s learning small things and putting them together in novel ways. I find it extraordinarily motivating to realize that “intelligence” or “inherent greatness” have nothing to do with inventing novel things that can change the world; it’s all just learning things that must be so, and exploiting that knowledge.</p>
+<p>But I digress. I brought up the anecdote about Mr.&nbsp;Bruce in order to raise a similar “obvious-but-not” question.</p>
+<blockquote>
+<p>“<em>Of course</em> we can design circuits on paper, and have them work on real hardware. <em>…but why?</em>”</p>
+</blockquote>
+<p>Or, to be more explicit:</p>
+<blockquote>
+<p>“Obviously, through our actions and perception, we can freely reflect between ideas in our minds and externalities in the real world. We can form models of reality in our heads, and we can influence the real world to be more like the world we see in our minds. <em>….but why?</em>”</p>
+</blockquote>
+<p>I’ll let you stew on those thoughts for a while. Amazingly, computer science <em>has an answer</em> to that question. Unfortunately, like Neo in the Matrix, you’re not ready to hear it yet. We’ve got a long ways to go yet.</p>
+</div>
+<p class="meta">
+    
+    <span class="prev">
+        <a href="https://reasonablypolymorphic.com/book/universal-machines">←</a>
+    </span>
+    
+    
+    <span class="next">
+        <a href="https://reasonablypolymorphic.com/book/numbers">→</a>
+    </span>
+    
+</p>
+</article>
+
+    <nav>
+    <h1><a href="https://reasonablypolymorphic.com/">REASONABLY<br>POLYMORPHIC</a></h1>
+
+    <p> Hi there. I'm <strong>Sandy Maguire</strong>. I like improving life and
+    making cool things.</p>
+
+    <p>If you want to get in touch, I'd love to hear from you! Send me an email;
+    my name is <tt>sandy</tt> and this is my website.</p>
+
+    <h2>THINGS I MAKE</h2>
+    <ul>
+        <li>Code on <a href="http://github.com/isovector">github</a></li>
+        <li>Essays <a href="https://reasonablypolymorphic.com/blog/archives/">archive</a></li>
+        <li>Book <a href="https://reasonablypolymorphic.com/book/preface">archive</a></li>
+    </ul>
+
+    <h2>WHAT I'M DOING</h2>
+    <ul>
+        <li>Music at <a href="http://last.fm/user/Paamayim">last.fm</a></li>
+        <li>Books at <a href="https://www.goodreads.com/review/list/14945161-sandy-maguire?shelf=currently-reading">goodreads</a></li>
+        <li>Papers at <a href="https://www.mendeley.com/groups/7295141/read/papers/">mendeley</a></li>
+    </ul>
+
+    <p>
+    © 2011-2016 Sandy Maguire
+    </p>
+</nav>
+
+</div>
+    
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXSizeOneSym, sans-serif;"></div></div></body></html>
